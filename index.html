@@ -5,23 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yuans Store</title>
     
-    <!-- 多语言自动检测脚本 -->
-    <script>
-        // 检测浏览器语言
-        var userLang = navigator.language || navigator.userLanguage;
-        var langCode = userLang.toLowerCase().split('-')[0];
-        
-        // 支持的语言
-        var supportedLangs = ['th', 'vi', 'id', 'ms', 'zh'];
-        
-        // 如果浏览器语言在支持列表中，且当前不是该语言页面，则跳转
-        if (supportedLangs.indexOf(langCode) !== -1) {
-            var currentPage = window.location.pathname;
-            if (!currentPage.includes('index-' + langCode + '.html')) {
-                window.location.href = 'index-' + langCode + '.html';
-            }
-        }
-    </script>
+    <!-- 多语言切换 - 手动选择 -->
     
     <!-- Open Graph / Facebook / WeChat -->
     <meta property="og:type" content="website">
