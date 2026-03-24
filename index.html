@@ -83,33 +83,51 @@
         .footer-contact a { color: white; text-decoration: none; }
         footer a { color: white; text-decoration: underline; font-weight: bold; }
         @media (max-width: 768px) { 
-            .hero h1 { font-size: 24px; } 
-            .hero p { font-size: 16px; }
+            .hero h1 { font-size: 22px; } 
+            .hero p { font-size: 14px; }
             .hero .badge { 
                 display: block; 
                 margin: 5px auto; 
                 width: 90%;
-                font-size: 13px;
-                padding: 6px 15px;
+                font-size: 12px;
+                padding: 5px 12px;
             }
             .nav-tabs { 
                 flex-direction: column; 
-                gap: 8px; 
+                gap: 5px; 
                 width: 100%;
-                margin-top: 10px;
+                margin: 0;
             }
             .nav-tab { 
                 width: 100%; 
                 text-align: center;
-                font-size: 14px;
-                padding: 10px;
+                font-size: 13px;
+                padding: 8px;
+                margin: 2px 0;
             }
-            nav { flex-direction: column; align-items: flex-start; }
-            .logo { margin-bottom: 10px; }
-            .sub-tabs { flex-wrap: wrap; gap: 10px; }
-            .sub-tab { font-size: 14px; padding: 8px 20px; }
+            nav { 
+                flex-direction: column; 
+                align-items: stretch !important;
+            }
+            nav > div[style*="flex"] {
+                flex-direction: column !important;
+                width: 100%;
+                gap: 5px !important;
+            }
+            .logo { 
+                margin-bottom: 10px; 
+                font-size: 20px;
+                text-align: center;
+            }
+            .sub-tabs { flex-wrap: wrap; gap: 8px; }
+            .sub-tab { font-size: 13px; padding: 6px 15px; }
             .product-grid { grid-template-columns: 1fr; }
-            .category-title { font-size: 24px; }
+            .category-title { font-size: 22px; }
+            .modal-content {
+                width: 95%;
+                margin: 10% auto;
+                padding: 15px;
+            }
         }
     </style>
 </head>
