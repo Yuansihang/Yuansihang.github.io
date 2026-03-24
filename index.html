@@ -137,25 +137,30 @@
 </head>
 <body>
     <header>
-        <nav class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-            <div class="logo">🛒 Factory Direct</div>
-            <div class="nav-tabs">
-                <button class="nav-tab active" onclick="showCategory('mats')">Cooling Mats</button>
-                <button class="nav-tab" onclick="showCategory('toys')">Pet Toys</button>
-                <button class="nav-tab" onclick="showCategory('feeders')">Smart Feeders</button>
-                <button class="nav-tab" onclick="openPricingModal()" style="background: rgba(255,255,255,0.3);">Pricing</button>
-            </div>
+        <nav class="container" style="text-align: center; padding: 15px 0;">
+            <div class="logo" style="font-size: 20px;">🛒 Factory Direct</div>
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="container">
-            <h1>Premium Pet Supplies Wholesale</h1>
-            <p>Professional B2B Supplier from China</p>
-            <div>
-                <span class="badge">✓ Stock MOQ 300 pcs</span>
-                <span class="badge">✓ Custom MOQ 1,000 pcs</span>
-                <span class="badge">✓ Mixed Order OK</span>
+    <section class="hero" style="padding-top: 100px;">
+        <div class="container" style="text-align: center;">
+            <h1 style="font-size: 48px; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">Factory Direct</h1>
+            <p style="font-size: 24px; margin-bottom: 30px; opacity: 0.95;">Premium Pet Supplies Wholesale</p>
+            
+            <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 25px;">
+                <button class="nav-tab active" onclick="showCategory('mats')" style="font-size: 16px; padding: 12px 25px;">❄️ Cooling Mats</button>
+                <button class="nav-tab" onclick="showCategory('toys')" style="font-size: 16px; padding: 12px 25px;">🎾 Pet Toys</button>
+                <button class="nav-tab" onclick="showCategory('feeders')" style="font-size: 16px; padding: 12px 25px;">🍽️ Smart Feeders</button>
+                <button class="nav-tab" onclick="openPricingModal()" style="background: rgba(255,255,255,0.3); font-size: 16px; padding: 12px 25px;">📋 Pricing</button>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.15); padding: 20px; border-radius: 15px; margin-top: 20px;">
+                <p style="font-size: 18px; margin-bottom: 15px; font-weight: 600;">Professional B2B Supplier from China</p>
+                <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                    <span class="badge" style="font-size: 15px; padding: 10px 20px;">✓ Stock MOQ 300 pcs</span>
+                    <span class="badge" style="font-size: 15px; padding: 10px 20px;">✓ Custom MOQ 1,000 pcs</span>
+                    <span class="badge" style="font-size: 15px; padding: 10px 20px;">✓ Mixed Order OK</span>
+                </div>
             </div>
         </div>
     </section>
