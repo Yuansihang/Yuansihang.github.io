@@ -46,6 +46,15 @@
         .product-features li { padding: 5px 0; color: #666; }
         .product-features li:before { content: "✓ "; color: #4ecdc4; font-weight: bold; }
         .order-button { display: block; width: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; text-align: center; text-decoration: none; }
+        /* Modal Styles */
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); overflow: auto; }
+        .modal-content { background-color: white; margin: 5% auto; padding: 30px; border-radius: 12px; width: 90%; max-width: 800px; max-height: 80vh; overflow-y: auto; position: relative; }
+        .close { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; position: absolute; right: 20px; top: 15px; }
+        .close:hover { color: #000; }
+        .pricing-table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        .pricing-table th { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 12px; text-align: left; }
+        .pricing-table td { padding: 12px; border-bottom: 1px solid #eee; }
+        .pricing-table tr:hover { background: #f8f9fa; }
         .placeholder { text-align: center; padding: 100px 20px; background: #f8f9fa; border-radius: 12px; }
         .placeholder-icon { font-size: 80px; margin-bottom: 20px; }
         .placeholder h2 { font-size: 28px; color: #667eea; margin-bottom: 15px; }
@@ -83,11 +92,13 @@
     <header>
         <nav class="container">
             <div class="logo">🛒 Factory Direct</div>
-            <div class="nav-tabs">
-                <button class="nav-tab active" onclick="showCategory('mats')">Cooling Mats</button>
-                <button class="nav-tab" onclick="showCategory('toys')">Pet Toys</button>
-                <button class="nav-tab" onclick="showCategory('feeders')">Smart Feeders</button>
-                <a href="pricing.html" class="nav-tab" style="text-decoration: none;">Pricing</a>
+            <div style="display: flex; gap: 20px; align-items: center;">
+                <div class="nav-tabs" style="margin-right: 20px;">
+                    <button class="nav-tab active" onclick="showCategory('mats')">Cooling Mats</button>
+                    <button class="nav-tab" onclick="showCategory('toys')">Pet Toys</button>
+                    <button class="nav-tab" onclick="showCategory('feeders')">Smart Feeders</button>
+                </div>
+                <button class="nav-tab" onclick="openPricingModal()" style="background: rgba(255,255,255,0.3);">Pricing</button>
             </div>
         </nav>
     </header>
@@ -375,6 +386,110 @@
         </div>
     </section>
 
+    <!-- Pricing Modal -->
+    <div id="pricingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closePricingModal()">&times;</span>
+            <h2 style="color: #667eea; margin-bottom: 20px;">📋 Detailed Pricing</h2>
+            
+            <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+                <p><strong>Port:</strong> FOB China (Qingdao/Ningbo/Shenzhen)</p>
+                <p><strong>Payment:</strong> T/T 30% deposit, 70% before shipment</p>
+                <p><strong>Lead Time:</strong> 15-25 days after deposit</p>
+                <p><strong>MOQ:</strong> 300 pcs per order (can mix sizes & colors)</p>
+            </div>
+
+            <h3 style="color: #333; margin: 20px 0 10px;">❄️ Basic Series</h3>
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Size</th>
+                        <th>Dimensions</th>
+                        <th>FOB China</th>
+                        <th>Weight</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>M</strong></td>
+                        <td>50 × 60 cm</td>
+                        <td style="color: #ff6b6b; font-weight: bold;">$3.00</td>
+                        <td>0.8 kg</td>
+                    </tr>
+                    <tr>
+                        <td><strong>L</strong></td>
+                        <td>60 × 90 cm</td>
+                        <td style="color: #ff6b6b; font-weight: bold;">$4.80</td>
+                        <td>1.5 kg</td>
+                    </tr>
+                    <tr>
+                        <td><strong>XL</strong></td>
+                        <td>70 × 120 cm</td>
+                        <td style="color: #ff6b6b; font-weight: bold;">$7.50</td>
+                        <td>2.2 kg</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="color: #333; margin: 20px 0 10px;">💧 Pro Series (Water Refill)</h3>
+            <table class="pricing-table">
+                <thead>
+                    <tr>
+                        <th>Size</th>
+                        <th>Dimensions</th>
+                        <th>FOB China</th>
+                        <th>Weight</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>M</strong></td>
+                        <td>50 × 60 cm</td>
+                        <td style="color: #ff6b6b; font-weight: bold;">$3.50</td>
+                        <td>0.9 kg</td>
+                    </tr>
+                    <tr>
+                        <td><strong>L</strong></td>
+                        <td>60 × 90 cm</td>
+                        <td style="color: #ff6b6b; font-weight: bold;">$5.50</td>
+                        <td>1.6 kg</td>
+                    </tr>
+                    <tr>
+                        <td><strong>XL</strong></td>
+                        <td>70 × 120 cm</td>
+                        <td style="color: #ff6b6b; font-weight: bold;">$8.50</td>
+                        <td>2.3 kg</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2XL</strong></td>
+                        <td>70 × 170 cm</td>
+                        <td style="color: #ff6b6b; font-weight: bold;">$12.50</td>
+                        <td>3.5 kg</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3XL</strong></td>
+                        <td>90 × 180 cm</td>
+                        <td style="color: #ff6b6b; font-weight: bold;">$15.50</td>
+                        <td>4.2 kg</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin-top: 20px;">
+                <h4 style="color: #667eea; margin-bottom: 10px;">📌 Ordering Rules</h4>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>Stock Order:</strong> MOQ 300 pcs (can mix sizes, colors, series)</li>
+                    <li><strong>Custom Order:</strong> MOQ 1,000 pcs (custom logo, color, pattern)</li>
+                    <li><strong>Sample:</strong> $8/pc + shipping (deducted from first order)</li>
+                </ul>
+            </div>
+
+            <div style="text-align: center; margin-top: 25px;">
+                <a href="https://wa.me/8618791650059?text=Hi, I'm interested in your pricing. Please send full catalog." target="_blank" style="display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px 40px; border-radius: 50px; text-decoration: none; font-weight: bold;">Request Full Catalog</a>
+            </div>
+        </div>
+    </div>
+
     <footer>
         <div class="container">
             <p>&copy; 2026 Factory Direct | Stock MOQ 300 pcs | Custom MOQ 1,000 pcs | WhatsApp: <a href="https://wa.me/8618791650059">+86 187 9165 0059</a></p>
@@ -403,6 +518,22 @@
                 tab.classList.remove('active');
             });
             event.target.classList.add('active');
+        }
+        
+        function openPricingModal() {
+            document.getElementById('pricingModal').style.display = 'block';
+        }
+        
+        function closePricingModal() {
+            document.getElementById('pricingModal').style.display = 'none';
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('pricingModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
         }
     </script>
 </body>
